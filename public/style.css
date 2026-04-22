@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500&display=swap');
+
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-focus: rgba(99, 102, 241, 0.25);
+  --primary-inverse: #ffffff;
+  --font-family: 'Inter', sans-serif;
+  --h1-font-family: 'Outfit', sans-serif;
+  --form-element-border-radius: 0.5rem;
+}
+
+html[data-theme="light"], :root:not([data-theme="dark"]) {
+  --background-color: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --text-color: #1e293b;
+}
+
+body {
+  background: linear-gradient(135deg, #e0e7ff 0%, #fae8ff 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--h1-font-family);
+}
+
+hgroup h1 {
+  background: linear-gradient(90deg, #6366f1, #d946ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+hgroup h2 {
+  text-align: center;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Glassmorphism Cards */
+article {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  margin-bottom: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Button Styling */
+button {
+  background: linear-gradient(90deg, #6366f1, #d946ef) !important;
+  border: none !important;
+  font-family: var(--h1-font-family);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 9999px !important;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s !important;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+  opacity: 0.95;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Table Enhancements */
+table {
+  font-size: 0.95rem;
+}
+
+th {
+  color: #475569;
+  font-family: var(--h1-font-family);
+}
+
+tbody tr {
+  transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+  background-color: rgba(99, 102, 241, 0.05);
+}
+
+/* Form Styles */
+input, select {
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  border-color: var(--primary);
+}
+
+/* QR Code Section */
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    border-top: 1px dashed rgba(148, 163, 184, 0.4);
+    border-radius: 0;
+    padding-top: 2rem;
+}
+
+.qr-container:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+#qrcode {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#qrcode:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.qr-container p {
+  color: #64748b;
+  font-weight: 500;
+}
