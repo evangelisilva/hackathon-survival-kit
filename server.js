@@ -32,13 +32,10 @@ async function initDb() {
     // Seed data if empty
     const count = await db.get('SELECT COUNT(*) as count FROM items');
     if (count.count === 0) {
-        await db.run('INSERT INTO items (item_name, category, must_have_level, survival_reason) VALUES (?, ?, ?, ?)', 
+        await db.run('INSERT INTO items (item_name, category, must_have_level, survival_reason) VALUES (?, ?, ?, ?)',
             ['Coffee', 'Drink', 10, 'Not a beverage. A core dependency.']);
-        await db.run('INSERT INTO items (item_name, category, must_have_level, survival_reason) VALUES (?, ?, ?, ?)', 
+        await db.run('INSERT INTO items (item_name, category, must_have_level, survival_reason) VALUES (?, ?, ?, ?)',
             ['Charger', 'Tech', 10, 'More reliable than my sleep schedule.']);
-        await db.run('INSERT INTO items (item_name, category, must_have_level, survival_reason) VALUES (?, ?, ?, ?)', 
-            ['Instant Noodles', 'Food', 9, 'The unofficial sponsor of bad decisions and great demos.']);
-        console.log('Database seeded with example items.');
     }
 }
 
